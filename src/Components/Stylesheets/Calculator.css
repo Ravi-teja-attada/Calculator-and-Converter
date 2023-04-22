@@ -1,0 +1,82 @@
+* {
+    box-sizing: border-box;
+    -webkit-user-select: none;
+    -webkit-user-drag: none;
+    -webkit-app-region: none;
+}
+body {
+    display: grid;
+    place-content: center;
+    background-color: orange;
+    height: 100vh;
+    font-size: 2rem;
+    font-family: "Montserrat";
+}
+
+.container {
+    background-color: white;
+    height: 80vh;
+    width: 50vw;
+    padding: 1rem;
+    border-radius: 0 0 1rem 1rem;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+    gap: 10px;
+}
+
+.menu {
+    background-color: white;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    font-size: 1rem;
+    font-weight: 100;
+    text-align: center;
+    padding: 1rem 0;
+    border-radius: 1rem 1rem 0 0;
+}
+
+.bar {
+    padding: 5px 0;
+    border-radius: 0.5rem;
+    margin: 0 2rem;
+    border-style: solid;
+    border-color: white;
+    
+}
+.bar:hover{
+    
+    border-color: orange;
+}
+.standard {
+    background-color: orange;
+}
+.screen {
+    grid-column: 1/-1;
+    font-size: 4rem;
+    text-align: right;
+}
+
+.bn {
+    font-size: 2rem;
+    display: grid;
+    place-content: center;
+    border-radius: 1rem;
+}
+.bn:hover {
+    background-color: lightgray;
+}
+
+
+.orange {
+    color: #fc7300;
+    font-weight: bold;
+}
+
+.equal {
+    background-color: #fc7300;
+    color: white;
+}
+.equal:hover {
+    background-color: orange;
+}

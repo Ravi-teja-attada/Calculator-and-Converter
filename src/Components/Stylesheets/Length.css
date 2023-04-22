@@ -1,0 +1,46 @@
+.area {
+    background-color: white;
+    height: 80vh;
+    width: 50vw;
+    padding: 1rem;
+    border-radius: 0 0 1rem 1rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+    gap: 10px;
+}
+.area .bn{
+    margin: 0 1rem;
+}
+
+.screen1, .screen2 {
+    padding: 0 4rem;
+    grid-column: 1/-1;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.unit {
+    text-align: right;
+    font-size: 1.5rem;
+    margin:auto 0;
+    
+}
+.value1 {
+    margin: auto 0;
+}
+
+.dropdown-toggle {
+    
+    color: black;
+    background-color: white;
+    border-style: none;
+}
+.show>.dropdown-menu {
+    display: block;
+    position: absolute;
+  }
+
+input{
+    border-style: none;
+}
