@@ -1,29 +1,39 @@
 import React, { useState } from "react";
 import Calculator from "./Components/Calculator";
-import Scientific from "./Components/Scientific";
+
 import Converter from "./Components/Converter";
-import Menu from "./Components/Menu";
+
 
 
 function App(){
   const [box, setBox] = useState(<Calculator />);
+  const [convColor, setConvColor] = useState({
+    backgroundColor: "white"
+  });
+  const [standColor, setStandColor] = useState({backgroundColor: "orange"})
 
+
+  function Convert(){
+    
+  }
   function Container(e){
     if (e.target.innerText === "Converter"){
       setBox(<Converter />)
-    }else if(e.target.innerText==="Scientific"){
-      setBox(<Scientific />)
+      setConvColor({backgroundColor: "orange"})
+      setStandColor({backgroundColor: "white"})
     } else if(e.target.innerText==="Standard"){
       setBox(<Calculator />)
+      setConvColor({backgrounColor: "white"})
+      setStandColor({backgroundColor: "orange"})
     }
   }
   
   return (
     <div>
       <div className="menu">
-        <div className="bar standard" onClick={Container}>Standard</div>
+        <div className="bar standard" onClick={Container} style={standColor} >Standard</div>
         
-        <div className="bar converter" onClick={Container}>Converter</div>
+        <div className="bar converter" onClick={Container} style={convColor}>Converter</div>
       </div>
       {box}
     </div>

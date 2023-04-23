@@ -3,6 +3,7 @@ import "./Stylesheets/Length.css";
 
 function Mass(){
   const units = ["Tonne", "Kilogram", "Gram", "Milligram", "Microgram", "Quintal", "Pound", "Ounce", "Carat", "Grain"]
+  const numbers = ['7','8', '9','4','5','6','1','2','3','.','0']
   const [m, setM] = useState(1000);
   const [n, setN] = useState(1);
   const [unit1, setUnit1] = useState("Kilogram")
@@ -73,16 +74,7 @@ function Mass(){
           <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
             {unit1}</button>
             <ul class="dropdown-menu">
-            <li><div class="dropdown-item" onClick={changeUnit1}>Tonne</div></li>
-            <li><div class="dropdown-item" onClick={changeUnit1}>Kilogram</div></li>
-            <li><div class="dropdown-item" onClick={changeUnit1}>Gram</div></li>
-            <li><div class="dropdown-item" onClick={changeUnit1}>Quintal</div></li>
-            <li><div class="dropdown-item" onClick={changeUnit1}>Pound</div></li>
-            <li><div class="dropdown-item" onClick={changeUnit1}>Ounce</div></li>
-            <li><div class="dropdown-item" onClick={changeUnit1}>Milligram</div></li>
-            <li><div class="dropdown-item" onClick={changeUnit1}>Microgram</div></li>
-            <li><div class="dropdown-item" onClick={changeUnit1}>Carat</div></li>
-            <li><div class="dropdown-item" onClick={changeUnit1}>Grain</div></li>
+            {units.map((item)=><li><div class="dropdown-item" onClick={changeUnit1}>{item}</div></li>)}
             </ul>
           </div></div>
         <div className="screen2"><input onClick={() => {setCheck2(true); setCheck1(false)}} value={input2}></input>
@@ -90,33 +82,10 @@ function Mass(){
           <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
             {unit2}</button>
             <ul class="dropdown-menu">
-            <li><div class="dropdown-item" onClick={changeUnit2}>Tonne</div></li>
-            <li><div class="dropdown-item" onClick={changeUnit2}>Kilogram</div></li>
-            <li><div class="dropdown-item" onClick={changeUnit2}>Gram</div></li>
-            <li><div class="dropdown-item" onClick={changeUnit2}>Quintal</div></li>
-            <li><div class="dropdown-item" onClick={changeUnit2}>Pound</div></li>
-            <li><div class="dropdown-item" onClick={changeUnit2}>Ounce</div></li>
-            <li><div class="dropdown-item" onClick={changeUnit2}>Milligram</div></li>
-            <li><div class="dropdown-item" onClick={changeUnit2}>Microgram</div></li>
-            <li><div class="dropdown-item" onClick={changeUnit2}>Carat</div></li>
-            <li><div class="dropdown-item" onClick={changeUnit2}>Grain</div></li>
+            {units.map((item)=><li><div class="dropdown-item" onClick={changeUnit2}>{item}</div></li>)}
             </ul>
           </div></div>
-        <div className="bn black" onClick={inputNum}>7</div>
-        <div className="bn black" onClick={inputNum}>8</div>
-        <div className="bn black" onClick={inputNum}>9</div>
-        
-        <div className="bn black" onClick={inputNum}>4</div>
-        <div className="bn black" onClick={inputNum}>5</div>
-        <div className="bn black" onClick={inputNum}>6</div>
-        
-        <div className="bn black" onClick={inputNum}>1</div>
-        <div className="bn black" onClick={inputNum}>2</div>
-        <div className="bn black" onClick={inputNum}>3</div>
-        
-        
-        <div className="bn black" onClick={inputNum}>.</div>
-        <div className="bn black" onClick={inputNum}>0</div>
+          {numbers.map((item)=><div className="bn black" onClick={inputNum}>{item}</div>)}
         <div className="bn equal" onClick={reset}>AC</div>
     </div>
 }

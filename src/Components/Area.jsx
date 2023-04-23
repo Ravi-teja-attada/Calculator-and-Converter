@@ -3,6 +3,7 @@ import "./Stylesheets/Length.css";
 
 function Area(){
   const units = ["SquareMillimeter", "SquareCentimeter", "SquareMeter", "SquareKilometer","Hectare", "Acre", "SquareMile", "SquareYard", "SquareFoot", "SquareInch"]
+  const numbers = ['7','8', '9','4','5','6','1','2','3','.','0']
   const [m, setM] = useState(1);
   const [n, setN] = useState(1);
   const [unit1, setUnit1] = useState("SquareMeter")
@@ -73,16 +74,7 @@ function Area(){
           <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
             {unit1}</button>
             <ul class="dropdown-menu">
-            <li><div class="dropdown-item" onClick={changeUnit1}>SquareMeter</div></li>
-            <li><div class="dropdown-item" onClick={changeUnit1}>SquareMillimeter</div></li>
-            <li><div class="dropdown-item" onClick={changeUnit1}>SquareCentimeter</div></li>
-            <li><div class="dropdown-item" onClick={changeUnit1}>SquareKilometer</div></li>
-            <li><div class="dropdown-item" onClick={changeUnit1}>SquareMile</div></li>
-            <li><div class="dropdown-item" onClick={changeUnit1}>SquareYard</div></li>
-            <li><div class="dropdown-item" onClick={changeUnit1}>SquareFoot</div></li>
-            <li><div class="dropdown-item" onClick={changeUnit1}>SquareInch</div></li>
-            <li><div class="dropdown-item" onClick={changeUnit1}>Hectare</div></li>
-            <li><div class="dropdown-item" onClick={changeUnit1}>Acre</div></li>
+            {units.map((item)=><li><div class="dropdown-item" onClick={changeUnit1}>{item}</div></li>)}
             </ul>
           </div></div>
         <div className="screen2"><input onClick={() => {setCheck2(true); setCheck1(false)}} value={input2}></input>
@@ -90,33 +82,10 @@ function Area(){
           <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
             {unit2}</button>
             <ul class="dropdown-menu">
-            <li><div class="dropdown-item" onClick={changeUnit2}>SquareMeter</div></li>
-            <li><div class="dropdown-item" onClick={changeUnit2}>SquareMillimeter</div></li>
-            <li><div class="dropdown-item" onClick={changeUnit2}>SquareCentimeter</div></li>
-            <li><div class="dropdown-item" onClick={changeUnit2}>SquareKilometer</div></li>
-            <li><div class="dropdown-item" onClick={changeUnit2}>SquareMile</div></li>
-            <li><div class="dropdown-item" onClick={changeUnit2}>SquareYard</div></li>
-            <li><div class="dropdown-item" onClick={changeUnit2}>SquareFoot</div></li>
-            <li><div class="dropdown-item" onClick={changeUnit2}>SquareInch</div></li>
-            <li><div class="dropdown-item" onClick={changeUnit2}>Hectare</div></li>
-            <li><div class="dropdown-item" onClick={changeUnit2}>Acre</div></li>
+            {units.map((item)=><li><div class="dropdown-item" onClick={changeUnit2}>{item}</div></li>)}
             </ul>
           </div></div>
-        <div className="bn black" onClick={inputNum}>7</div>
-        <div className="bn black" onClick={inputNum}>8</div>
-        <div className="bn black" onClick={inputNum}>9</div>
-        
-        <div className="bn black" onClick={inputNum}>4</div>
-        <div className="bn black" onClick={inputNum}>5</div>
-        <div className="bn black" onClick={inputNum}>6</div>
-        
-        <div className="bn black" onClick={inputNum}>1</div>
-        <div className="bn black" onClick={inputNum}>2</div>
-        <div className="bn black" onClick={inputNum}>3</div>
-        
-        
-        <div className="bn black" onClick={inputNum}>.</div>
-        <div className="bn black" onClick={inputNum}>0</div>
+          {numbers.map((item)=><div className="bn black" onClick={inputNum}>{item}</div>)}
         <div className="bn equal" onClick={reset}>AC</div>
     </div>
 }

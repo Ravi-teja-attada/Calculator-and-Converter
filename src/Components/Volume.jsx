@@ -3,6 +3,7 @@ import "./Stylesheets/Length.css";
 
 function Volume(){
   const units = ["CubicMillimeter", "CubicCentimeter", "CubicMeter", "Liter", "CentiLiter", "MilliLiter", "CubicFoot", "CubicInch", "CubicYard"]
+  const numbers = ['7','8', '9','4','5','6','1','2','3','.','0']
   const [m, setM] = useState(1);
   const [n, setN] = useState(1);
   const [unit1, setUnit1] = useState("CubicMeter")
@@ -71,15 +72,7 @@ function Volume(){
           <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
             {unit1}</button>
             <ul class="dropdown-menu">
-            <li><div class="dropdown-item" onClick={changeUnit1}>CubicMeter</div></li>
-            <li><div class="dropdown-item" onClick={changeUnit1}>CubicMillimeter</div></li>
-            <li><div class="dropdown-item" onClick={changeUnit1}>CubicCentimeter</div></li>
-            <li><div class="dropdown-item" onClick={changeUnit1}>Liter</div></li>
-            <li><div class="dropdown-item" onClick={changeUnit1}>CentiLiter</div></li>
-            <li><div class="dropdown-item" onClick={changeUnit1}>Milliter</div></li>
-            <li><div class="dropdown-item" onClick={changeUnit1}>CubicFoot</div></li>
-            <li><div class="dropdown-item" onClick={changeUnit1}>CubicInch</div></li>
-            <li><div class="dropdown-item" onClick={changeUnit1}>CubicYard</div></li>
+            {units.map((item)=><li><div class="dropdown-item" onClick={changeUnit1}>{item}</div></li>)}
             
             </ul>
           </div></div>
@@ -88,32 +81,10 @@ function Volume(){
           <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
             {unit2}</button>
             <ul class="dropdown-menu">
-            <li><div class="dropdown-item" onClick={changeUnit2}>CubicMeter</div></li>
-            <li><div class="dropdown-item" onClick={changeUnit2}>CubicMillimeter</div></li>
-            <li><div class="dropdown-item" onClick={changeUnit2}>CubicCentimeter</div></li>
-            <li><div class="dropdown-item" onClick={changeUnit2}>Liter</div></li>
-            <li><div class="dropdown-item" onClick={changeUnit2}>CentiLiter</div></li>
-            <li><div class="dropdown-item" onClick={changeUnit2}>MilliLiter</div></li>
-            <li><div class="dropdown-item" onClick={changeUnit2}>CubicFoot</div></li>
-            <li><div class="dropdown-item" onClick={changeUnit2}>CubicInch</div></li>
-            <li><div class="dropdown-item" onClick={changeUnit2}>CubicYard</div></li>
+            {units.map((item)=><li><div class="dropdown-item" onClick={changeUnit2}>{item}</div></li>)}
             </ul>
           </div></div>
-        <div className="bn black" onClick={inputNum}>7</div>
-        <div className="bn black" onClick={inputNum}>8</div>
-        <div className="bn black" onClick={inputNum}>9</div>
-        
-        <div className="bn black" onClick={inputNum}>4</div>
-        <div className="bn black" onClick={inputNum}>5</div>
-        <div className="bn black" onClick={inputNum}>6</div>
-        
-        <div className="bn black" onClick={inputNum}>1</div>
-        <div className="bn black" onClick={inputNum}>2</div>
-        <div className="bn black" onClick={inputNum}>3</div>
-        
-        
-        <div className="bn black" onClick={inputNum}>.</div>
-        <div className="bn black" onClick={inputNum}>0</div>
+          {numbers.map((item)=><div className="bn black" onClick={inputNum}>{item}</div>)}
         <div className="bn equal" onClick={reset}>AC</div>
     </div>
 }
