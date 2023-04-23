@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from "react";
+import React, {useState} from "react";
 import "./Stylesheets/Length.css";
 
 function BMI(){
@@ -17,15 +17,14 @@ function BMI(){
   const [bmi, setBmi ] = useState(0);
   const [customColor, setCustomColor] = useState({color:''});
   const [customMessage, setCustomMessage] = useState('');
-  const [bmiStyles, setBmiStyles] = useState({
+  const bmiStyles = {
     padding: "0 2.5rem",
     gridColumn: "1/-1",
     display: "grid",
-    gridTemplateColumns: "repeat(2, 1fr)"
-  });
-
-
-
+    gridTemplateColumns: "repeat(2, 1fr)",
+    fontSize: "2.2rem"
+  };
+  
     function reset(){
       setInput1("0");
       setInput2("0");
@@ -66,11 +65,11 @@ function BMI(){
 
     }
 
-   const Flop = ()=>{
+   const Top = ()=>{
       if (checkAns) {
-        return (<div style={{gridColumn: "1/-1",
-    display: "grid"}}><h1 style={customColor}>Your BMI is {bmi}</h1>
-        <h2>{customMessage}</h2></div>)
+        return <div style={{gridColumn: "1/-1",display: "grid"}}>
+        <h1 style={customColor}>Your BMI is {bmi}</h1>
+        <h2>{customMessage}</h2></div>
       } else {
         return <div>
         <div className="screen1"><input onClick={() => {setCheck1(true); setCheck2(false)}} value={input1}></input>
@@ -114,7 +113,7 @@ function BMI(){
 
     return <div className="area">
           <div style={bmiStyles}>
-            <Flop />
+            <Top />
           </div>
         
           {numbers.map((item)=><div className="bn black" onClick={inputNum}>{item}</div>)}
