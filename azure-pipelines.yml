@@ -10,6 +10,8 @@ resources:
 
 variables:
   tag: '$(Build.BuildId)'
+  imageName: 'calculator-azure-ci'
+  dockerHubRegistry: 'raviteja191'
 
 stages:
 - stage: Build
@@ -23,7 +25,12 @@ stages:
     - task: Docker@2
       displayName: Build an image
       inputs:
-        command: build
+        command: buildAndPush
+        containerRegistry: 'docker.io'
+        repository: $(dockerHubRegistry)/$(imageName)
         dockerfile: '$(Build.SourcesDirectory)/Dockerfile'
         tags: |
           $(tag)
+      env:
+        DOCKERHUB_USERNAME: $(dockerHubRegistry)
+        DOCKERHUB_PASSWORD: $(dockerHubPassword)
